@@ -1,8 +1,7 @@
 package org.leyi.gmall.ums.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import org.leyi.gmall.mbg.ums.entity.Admin;
-import org.leyi.gmall.mbg.ums.entity.Admin;
+import org.leyi.gmall.ums.entity.Admin;
 
 /**
  * <p>

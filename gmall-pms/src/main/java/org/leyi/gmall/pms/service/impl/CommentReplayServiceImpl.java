@@ -1,8 +1,8 @@
 package org.leyi.gmall.pms.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import org.leyi.gmall.mbg.pms.service.ICommentReplayService;
-import org.leyi.gmall.mbg.pms.entity.CommentReplay;
+import org.leyi.gmall.pms.service.ICommentReplayService;
+import org.leyi.gmall.pms.entity.CommentReplay;
 import org.leyi.gmall.pms.mapper.CommentReplayMapper;
 import org.springframework.stereotype.Service;
 

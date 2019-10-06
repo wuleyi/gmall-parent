@@ -6,9 +6,9 @@ import com.google.common.collect.Maps;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.leyi.gmall.admin.util.JwtTokenUtils;
-import org.leyi.gmall.mbg.ums.entity.Admin;
-import org.leyi.gmall.mbg.ums.service.IAdminService;
-import org.leyi.gmall.mbg.ums.vo.UmsLoginParam;
+import org.leyi.gmall.ums.entity.Admin;
+import org.leyi.gmall.ums.service.IAdminService;
+import org.leyi.gmall.ums.vo.UmsLoginParam;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.validation.BindingResult;
@@ -36,7 +36,7 @@ public class UmsAdminController {
     @Value("${gmall.jwt.tokenHead}")
     private String tokenHead;
 
-    @PostMapping("/login")
+    @PostMapping("login")
     @ApiOperation("登陆")
     public R login(@Valid @RequestBody UmsLoginParam loginParam, BindingResult result) {
 
@@ -52,7 +52,7 @@ public class UmsAdminController {
         return R.ok(tokenMap).setCode(200);
     }
 
-    @GetMapping("/info")
+    @GetMapping("info")
     @ApiOperation("查询用户信息")
     public R getAdminInfo(HttpServletRequest request) {
 

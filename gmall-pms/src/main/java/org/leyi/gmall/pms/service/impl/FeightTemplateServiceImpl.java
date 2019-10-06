@@ -1,8 +1,8 @@
 package org.leyi.gmall.pms.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import org.leyi.gmall.mbg.pms.entity.FeightTemplate;
-import org.leyi.gmall.mbg.pms.service.IFeightTemplateService;
+import org.leyi.gmall.pms.entity.FeightTemplate;
+import org.leyi.gmall.pms.service.IFeightTemplateService;
 import org.leyi.gmall.pms.mapper.FeightTemplateMapper;
 import org.springframework.stereotype.Service;
 

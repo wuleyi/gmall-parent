@@ -1,7 +1,7 @@
 package org.leyi.gmall.ums.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import org.leyi.gmall.mbg.ums.entity.MemberMemberTagRelation;
+import org.leyi.gmall.ums.entity.MemberMemberTagRelation;
 
 /**
  * <p>

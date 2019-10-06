@@ -1,9 +1,9 @@
 package org.leyi.gmall.ums.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import org.leyi.gmall.mbg.ums.entity.MemberMemberTagRelation;
+import org.leyi.gmall.ums.entity.MemberMemberTagRelation;
 import org.leyi.gmall.ums.mapper.MemberMemberTagRelationMapper;
-import org.leyi.gmall.mbg.ums.service.IMemberMemberTagRelationService;
+import org.leyi.gmall.ums.service.IMemberMemberTagRelationService;
 import org.springframework.stereotype.Service;
 
 /**

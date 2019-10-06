@@ -1,9 +1,9 @@
 package org.leyi.gmall.pms.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import org.leyi.gmall.mbg.pms.entity.Comment;
+import org.leyi.gmall.pms.entity.Comment;
 import org.leyi.gmall.pms.mapper.CommentMapper;
-import org.leyi.gmall.mbg.pms.service.ICommentService;
+import org.leyi.gmall.pms.service.ICommentService;
 import org.springframework.stereotype.Service;
 
 /**

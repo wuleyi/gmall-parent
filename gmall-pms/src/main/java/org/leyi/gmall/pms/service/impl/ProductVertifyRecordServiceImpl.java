@@ -1,9 +1,9 @@
 package org.leyi.gmall.pms.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import org.leyi.gmall.mbg.pms.entity.ProductVertifyRecord;
+import org.leyi.gmall.pms.entity.ProductVertifyRecord;
 import org.leyi.gmall.pms.mapper.ProductVertifyRecordMapper;
-import org.leyi.gmall.mbg.pms.service.IProductVertifyRecordService;
+import org.leyi.gmall.pms.service.IProductVertifyRecordService;
 import org.springframework.stereotype.Service;
 
 /**

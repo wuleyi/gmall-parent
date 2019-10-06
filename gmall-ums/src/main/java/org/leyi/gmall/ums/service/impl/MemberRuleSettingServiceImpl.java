@@ -1,9 +1,9 @@
 package org.leyi.gmall.ums.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import org.leyi.gmall.mbg.ums.entity.MemberRuleSetting;
+import org.leyi.gmall.ums.entity.MemberRuleSetting;
 import org.leyi.gmall.ums.mapper.MemberRuleSettingMapper;
-import org.leyi.gmall.mbg.ums.service.IMemberRuleSettingService;
+import org.leyi.gmall.ums.service.IMemberRuleSettingService;
 import org.springframework.stereotype.Service;
 
 /**

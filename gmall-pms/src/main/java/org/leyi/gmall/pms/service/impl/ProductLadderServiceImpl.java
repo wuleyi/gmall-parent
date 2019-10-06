@@ -1,8 +1,8 @@
 package org.leyi.gmall.pms.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import org.leyi.gmall.mbg.pms.entity.ProductLadder;
-import org.leyi.gmall.mbg.pms.service.IProductLadderService;
+import org.leyi.gmall.pms.entity.ProductLadder;
+import org.leyi.gmall.pms.service.IProductLadderService;
 import org.leyi.gmall.pms.mapper.ProductLadderMapper;
 import org.springframework.stereotype.Service;
 

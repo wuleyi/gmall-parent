@@ -1,9 +1,9 @@
 package org.leyi.gmall.pms.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import org.leyi.gmall.mbg.pms.entity.ProductFullReduction;
+import org.leyi.gmall.pms.entity.ProductFullReduction;
 import org.leyi.gmall.pms.mapper.ProductFullReductionMapper;
-import org.leyi.gmall.mbg.pms.service.IProductFullReductionService;
+import org.leyi.gmall.pms.service.IProductFullReductionService;
 import org.springframework.stereotype.Service;
 
 /**

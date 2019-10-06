@@ -3,7 +3,7 @@ package org.leyi.gmall.admin.util;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import org.leyi.gmall.mbg.ums.entity.Admin;
+import org.leyi.gmall.ums.entity.Admin;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;

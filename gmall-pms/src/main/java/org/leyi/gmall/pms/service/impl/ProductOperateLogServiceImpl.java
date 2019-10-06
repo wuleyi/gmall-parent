@@ -1,9 +1,9 @@
 package org.leyi.gmall.pms.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import org.leyi.gmall.mbg.pms.entity.ProductOperateLog;
+import org.leyi.gmall.pms.entity.ProductOperateLog;
 import org.leyi.gmall.pms.mapper.ProductOperateLogMapper;
-import org.leyi.gmall.mbg.pms.service.IProductOperateLogService;
+import org.leyi.gmall.pms.service.IProductOperateLogService;
 import org.springframework.stereotype.Service;
 
 /**

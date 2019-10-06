@@ -1,9 +1,9 @@
 package org.leyi.gmall.pms.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import org.leyi.gmall.mbg.pms.entity.MemberPrice;
+import org.leyi.gmall.pms.entity.MemberPrice;
 import org.leyi.gmall.pms.mapper.MemberPriceMapper;
-import org.leyi.gmall.mbg.pms.service.IMemberPriceService;
+import org.leyi.gmall.pms.service.IMemberPriceService;
 import org.springframework.stereotype.Service;
 
 /**

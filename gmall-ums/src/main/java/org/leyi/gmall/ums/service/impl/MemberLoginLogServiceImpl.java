@@ -1,9 +1,9 @@
 package org.leyi.gmall.ums.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import org.leyi.gmall.mbg.ums.entity.MemberLoginLog;
+import org.leyi.gmall.ums.entity.MemberLoginLog;
 import org.leyi.gmall.ums.mapper.MemberLoginLogMapper;
-import org.leyi.gmall.mbg.ums.service.IMemberLoginLogService;
+import org.leyi.gmall.ums.service.IMemberLoginLogService;
 import org.springframework.stereotype.Service;
 
 /**

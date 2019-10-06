@@ -1,9 +1,9 @@
 package org.leyi.gmall.pms.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import org.leyi.gmall.mbg.pms.entity.AlbumPic;
+import org.leyi.gmall.pms.entity.AlbumPic;
 import org.leyi.gmall.pms.mapper.AlbumPicMapper;
-import org.leyi.gmall.mbg.pms.service.IAlbumPicService;
+import org.leyi.gmall.pms.service.IAlbumPicService;
 import org.springframework.stereotype.Service;
 
 /**

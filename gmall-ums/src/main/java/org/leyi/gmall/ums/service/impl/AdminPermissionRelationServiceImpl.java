@@ -1,9 +1,9 @@
 package org.leyi.gmall.ums.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import org.leyi.gmall.mbg.ums.entity.AdminPermissionRelation;
+import org.leyi.gmall.ums.entity.AdminPermissionRelation;
 import org.leyi.gmall.ums.mapper.AdminPermissionRelationMapper;
-import org.leyi.gmall.mbg.ums.service.IAdminPermissionRelationService;
+import org.leyi.gmall.ums.service.IAdminPermissionRelationService;
 import org.springframework.stereotype.Service;
 
 /**

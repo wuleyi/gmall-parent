@@ -5,10 +5,10 @@ import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import org.leyi.gmall.mbg.base.BasePage;
-import org.leyi.gmall.mbg.pms.entity.Brand;
+import org.leyi.gmall.base.BasePage;
+import org.leyi.gmall.pms.entity.Brand;
 import org.leyi.gmall.pms.mapper.BrandMapper;
-import org.leyi.gmall.mbg.pms.service.IBrandService;
+import org.leyi.gmall.pms.service.IBrandService;
 
 /**
  * <p>

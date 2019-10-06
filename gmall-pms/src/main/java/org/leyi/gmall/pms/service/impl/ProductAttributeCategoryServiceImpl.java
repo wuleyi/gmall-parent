@@ -1,9 +1,9 @@
 package org.leyi.gmall.pms.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import org.leyi.gmall.mbg.pms.entity.ProductAttributeCategory;
+import org.leyi.gmall.pms.entity.ProductAttributeCategory;
 import org.leyi.gmall.pms.mapper.ProductAttributeCategoryMapper;
-import org.leyi.gmall.mbg.pms.service.IProductAttributeCategoryService;
+import org.leyi.gmall.pms.service.IProductAttributeCategoryService;
 import org.springframework.stereotype.Service;
 
 /**

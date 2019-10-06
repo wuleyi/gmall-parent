@@ -3,9 +3,9 @@ package org.leyi.gmall.ums.service.impl;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import org.leyi.gmall.mbg.ums.entity.Admin;
+import org.leyi.gmall.ums.entity.Admin;
 import org.leyi.gmall.ums.mapper.AdminMapper;
-import org.leyi.gmall.mbg.ums.service.IAdminService;
+import org.leyi.gmall.ums.service.IAdminService;
 import org.springframework.util.DigestUtils;
 
 /**

@@ -1,9 +1,9 @@
 package org.leyi.gmall.ums.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import org.leyi.gmall.mbg.ums.entity.IntegrationChangeHistory;
+import org.leyi.gmall.ums.entity.IntegrationChangeHistory;
 import org.leyi.gmall.ums.mapper.IntegrationChangeHistoryMapper;
-import org.leyi.gmall.mbg.ums.service.IIntegrationChangeHistoryService;
+import org.leyi.gmall.ums.service.IIntegrationChangeHistoryService;
 import org.springframework.stereotype.Service;
 
 /**
