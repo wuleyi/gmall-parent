@@ -3,7 +3,6 @@ package org.leyi.gmall.admin.pms.controller;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.baomidou.mybatisplus.extension.api.R;
 import io.swagger.annotations.Api;
-import org.leyi.gmall.base.BasePage;
 import org.leyi.gmall.pms.service.IProductAttributeCategoryService;
 import org.leyi.gmall.pms.service.IProductAttributeService;
 import org.springframework.web.bind.annotation.*;
@@ -29,8 +28,7 @@ public class PmsProductAttributeController {
     @GetMapping("category/list")
     public R list(Long pageNum, Long pageSize){
 
-        BasePage page = productAttributeCategoryService.pagePlus(pageNum, pageSize);
-        return R.ok(null).setCode(200);
+        return R.ok(productAttributeCategoryService.pagePlus(pageNum, pageSize)).setCode(200);
     }
 
 }

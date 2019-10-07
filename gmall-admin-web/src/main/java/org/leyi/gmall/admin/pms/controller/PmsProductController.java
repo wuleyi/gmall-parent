@@ -8,6 +8,8 @@ import org.leyi.gmall.pms.service.IProductService;
 import org.leyi.gmall.pms.vo.PmsProductQuery;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
+
 @CrossOrigin
 @Api("商品管理")
 @RestController
@@ -53,6 +55,13 @@ public class PmsProductController {
     public R updateVerifyStatus(String ids, Integer verifyStatus){
 
         return R.ok(productService.updateBatchProductStatus(ids, verifyStatus, ProductStatusConstant.VERIFY_STATUS)).setCode(200);
+    }
+
+    @PostMapping("create")
+    public R createProduct(@RequestBody Map<String,Object> params){
+
+        boolean flag = productService.saveProduct(params);
+        return R.ok(null).setCode(200);
     }
 
 }

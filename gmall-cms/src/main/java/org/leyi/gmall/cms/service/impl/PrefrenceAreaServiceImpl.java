@@ -1,10 +1,10 @@
 package org.leyi.gmall.cms.service.impl;
 
+import com.alibaba.dubbo.config.annotation.Service;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.leyi.gmall.cms.entity.PrefrenceArea;
 import org.leyi.gmall.cms.mapper.PrefrenceAreaMapper;
 import org.leyi.gmall.cms.service.IPrefrenceAreaService;
-import org.springframework.stereotype.Service;
 
 /**
  * <p>

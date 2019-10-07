@@ -1,0 +1,15 @@
+dataSources:
+  db_master: !!com.zaxxer.hikari.HikariDataSource
+    driverClassName: com.mysql.jdbc.Driver
+    jdbcUrl: jdbc:mysql://59.110.220.105:3306/gmall_sms?useUnicode=true&useSSL=false&characterEncoding=utf8
+    username: root
+    password: 981110
+  db_slave: !!com.zaxxer.hikari.HikariDataSource
+    driverClassName: com.mysql.jdbc.Driver
+    jdbcUrl: jdbc:mysql://59.110.220.105:3316/gmall_sms?useUnicode=true&useSSL=false&characterEncoding=utf8
+    username: root
+    password: 981110
+masterSlaveRule:
+  name: db_ms
+  masterDataSourceName: db_master
+  slaveDataSourceNames: [db_slave]

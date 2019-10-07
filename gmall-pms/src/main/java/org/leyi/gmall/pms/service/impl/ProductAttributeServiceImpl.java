@@ -3,10 +3,12 @@ package org.leyi.gmall.pms.service.impl;
 import com.alibaba.dubbo.config.annotation.Service;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.google.common.collect.Maps;
 import org.leyi.gmall.pms.entity.ProductAttribute;
 import org.leyi.gmall.pms.mapper.ProductAttributeMapper;
 import org.leyi.gmall.pms.service.IProductAttributeService;
 
+import java.util.HashMap;
 import java.util.List;
 
 /**
@@ -21,11 +23,14 @@ import java.util.List;
 public class ProductAttributeServiceImpl extends ServiceImpl<ProductAttributeMapper, ProductAttribute> implements IProductAttributeService {
 
     @Override
-    public List<ProductAttribute> listByCategoryIdAndType(String productAttributeCategoryId, String type) {
+    public HashMap<String, List> listByCategoryIdAndType(String productAttributeCategoryId, String type) {
 
-        return baseMapper.selectList(new LambdaQueryWrapper<ProductAttribute>()
+        HashMap<String, List> resultMap = Maps.newHashMapWithExpectedSize(1);
+        resultMap.put("list", baseMapper.selectList(new LambdaQueryWrapper<ProductAttribute>()
                 .eq(ProductAttribute::getProductAttributeCategoryId, productAttributeCategoryId)
-                .eq(ProductAttribute::getType, type));
+                .eq(ProductAttribute::getType, type)));
+        return resultMap;
+
     }
 
 }

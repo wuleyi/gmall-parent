@@ -1,10 +1,10 @@
 package org.leyi.gmall.cms.service.impl;
 
+import com.alibaba.dubbo.config.annotation.Service;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.leyi.gmall.cms.entity.Subject;
 import org.leyi.gmall.cms.mapper.SubjectMapper;
 import org.leyi.gmall.cms.service.ISubjectService;
-import org.springframework.stereotype.Service;
 
 /**
  * <p>

@@ -15,6 +15,7 @@ import org.leyi.gmall.pms.mapper.ProductMapper;
 import org.leyi.gmall.pms.service.IProductService;
 import org.leyi.gmall.pms.vo.PmsProductQuery;
 
+import java.util.Map;
 import java.util.Optional;
 
 /**
@@ -73,6 +74,12 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
         return this.update(new LambdaUpdateWrapper<Product>()
                 .in(StringUtils.isNotEmpty(ids), Product::getId, Lists.newArrayList(ids.split(",")))
                 .set(column, publishStatus));
+    }
+
+    @Override
+    public boolean saveProduct(Map<String, Object> params) {
+
+        return false;
     }
 
 }
