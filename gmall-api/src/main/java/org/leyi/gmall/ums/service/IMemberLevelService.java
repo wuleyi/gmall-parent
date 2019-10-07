@@ -3,6 +3,8 @@ package org.leyi.gmall.ums.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import org.leyi.gmall.ums.entity.MemberLevel;
 
+import java.util.List;
+
 /**
  * <p>
  * 会员等级表 服务类
@@ -13,4 +15,5 @@ import org.leyi.gmall.ums.entity.MemberLevel;
  */
 public interface IMemberLevelService extends IService<MemberLevel> {
 
+    List<MemberLevel> listByDefaultStatus(Integer defaultStatus);
 }

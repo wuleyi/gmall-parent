@@ -32,7 +32,7 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
     public BasePage listByCondition(PmsProductQuery productQuery, Long current, Long size) {
 
         LambdaQueryWrapper<Product> lambdaQueryWrapper = new LambdaQueryWrapper<>();
-        lambdaQueryWrapper.eq(Product::getDeleteStatus, 1);
+        lambdaQueryWrapper.eq(Product::getDeleteStatus, 0);
 
         Optional.ofNullable(productQuery.getPublishStatus())
                 .ifPresent(publishStatus -> lambdaQueryWrapper.eq(Product::getPublishStatus, publishStatus));

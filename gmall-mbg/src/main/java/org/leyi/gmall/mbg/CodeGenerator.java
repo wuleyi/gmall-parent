@@ -21,7 +21,7 @@ public class CodeGenerator {
 
     public static void main(String[] args) {
 
-        final String MODULE_NAME = "ums";
+        final String MODULE_NAME = "oms";
 
         // 代码生成器
         AutoGenerator mpg = new AutoGenerator();
