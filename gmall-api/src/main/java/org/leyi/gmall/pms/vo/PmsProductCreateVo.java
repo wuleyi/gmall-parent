@@ -7,11 +7,12 @@ import org.leyi.gmall.cms.entity.PrefrenceAreaProductRelation;
 import org.leyi.gmall.cms.entity.SubjectProductRelation;
 import org.leyi.gmall.pms.entity.*;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
 @Data
-@ApiModel("商品添加参数")
-public class PmsProductCreateVo {
+@ApiModel("商品添加参数（全）")
+public class PmsProductCreateVo implements Serializable {
 
     @ApiModelProperty("商品分类id")
     private Integer productCategoryId;

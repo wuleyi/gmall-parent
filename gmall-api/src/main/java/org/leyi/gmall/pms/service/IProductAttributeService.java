@@ -1,10 +1,8 @@
 package org.leyi.gmall.pms.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.leyi.gmall.base.BasePage;
 import org.leyi.gmall.pms.entity.ProductAttribute;
-
-import java.util.HashMap;
-import java.util.List;
 
 /**
  * <p>
@@ -16,6 +14,6 @@ import java.util.List;
  */
 public interface IProductAttributeService extends IService<ProductAttribute> {
 
-    HashMap<String, List> listByCategoryIdAndType(String productAttributeCategoryId, String type);
+    BasePage listByCategoryIdAndType(String productAttributeCategoryId, String type, Long current, Long size);
 
 }

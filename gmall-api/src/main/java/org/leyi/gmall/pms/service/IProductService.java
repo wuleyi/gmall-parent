@@ -3,9 +3,8 @@ package org.leyi.gmall.pms.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import org.leyi.gmall.base.BasePage;
 import org.leyi.gmall.pms.entity.Product;
+import org.leyi.gmall.pms.vo.PmsProductPlusVo;
 import org.leyi.gmall.pms.vo.PmsProductQuery;
-
-import java.util.Map;
 
 /**
  * <p>
@@ -21,6 +20,6 @@ public interface IProductService extends IService<Product> {
 
     boolean updateBatchProductStatus(String ids, Integer publishStatus, String productStatusType);
 
-    boolean saveProduct(Map<String, Object> params);
+    boolean saveProductPlus(PmsProductPlusVo productPlusVo);
 
 }

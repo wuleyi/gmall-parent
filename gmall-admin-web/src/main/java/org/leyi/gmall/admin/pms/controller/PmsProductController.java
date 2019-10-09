@@ -5,10 +5,12 @@ import com.baomidou.mybatisplus.extension.api.R;
 import io.swagger.annotations.Api;
 import org.leyi.gmall.constant.ProductStatusConstant;
 import org.leyi.gmall.pms.service.IProductService;
+import org.leyi.gmall.pms.vo.PmsProductPlusVo;
 import org.leyi.gmall.pms.vo.PmsProductQuery;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.Map;
+import javax.validation.Valid;
 
 @CrossOrigin
 @Api("商品管理")
@@ -58,10 +60,9 @@ public class PmsProductController {
     }
 
     @PostMapping("create")
-    public R createProduct(@RequestBody Map<String,Object> params){
+    public R createProduct(@Valid @RequestBody PmsProductPlusVo productPlusVo, BindingResult bindingResult){
 
-        boolean flag = productService.saveProduct(params);
-        return R.ok(null).setCode(200);
+        return R.ok(productService.saveProductPlus(productPlusVo)).setCode(200);
     }
 
 }

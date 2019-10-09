@@ -12,7 +12,7 @@ import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
+import java.sql.Date;
 
 /**
  * <p>
@@ -129,10 +129,10 @@ public class Product extends Model<Product> {
     private String detailMobileHtml;
 
     @ApiModelProperty(value = "促销开始时间")
-    private LocalDateTime promotionStartTime;
+    private Date promotionStartTime;
 
     @ApiModelProperty(value = "促销结束时间")
-    private LocalDateTime promotionEndTime;
+    private Date promotionEndTime;
 
     @ApiModelProperty(value = "活动限购数量")
     private Integer promotionPerLimit;

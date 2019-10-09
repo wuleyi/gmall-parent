@@ -2,14 +2,12 @@ package org.leyi.gmall.pms.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
-import com.google.common.collect.Maps;
+import org.leyi.gmall.base.BasePage;
 import org.leyi.gmall.pms.entity.ProductAttribute;
 import org.leyi.gmall.pms.mapper.ProductAttributeMapper;
 import org.leyi.gmall.pms.service.IProductAttributeService;
-
-import java.util.HashMap;
-import java.util.List;
 
 /**
  * <p>
@@ -23,14 +21,11 @@ import java.util.List;
 public class ProductAttributeServiceImpl extends ServiceImpl<ProductAttributeMapper, ProductAttribute> implements IProductAttributeService {
 
     @Override
-    public HashMap<String, List> listByCategoryIdAndType(String productAttributeCategoryId, String type) {
+    public BasePage listByCategoryIdAndType(String productAttributeCategoryId, String type, Long current, Long size) {
 
-        HashMap<String, List> resultMap = Maps.newHashMapWithExpectedSize(1);
-        resultMap.put("list", baseMapper.selectList(new LambdaQueryWrapper<ProductAttribute>()
+        return new BasePage<ProductAttribute>(baseMapper.selectPage(new Page(current, size), new LambdaQueryWrapper<ProductAttribute>()
                 .eq(ProductAttribute::getProductAttributeCategoryId, productAttributeCategoryId)
                 .eq(ProductAttribute::getType, type)));
-        return resultMap;
-
     }
 
 }

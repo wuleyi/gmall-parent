@@ -24,7 +24,8 @@ public class SkuStockServiceImpl extends ServiceImpl<SkuStockMapper, SkuStock> i
     @Override
     public List<SkuStock> listByProductIdAndKeyword(String productId, String keyword) {
 
-        return baseMapper.selectList(new LambdaQueryWrapper<SkuStock>().eq(StringUtils.isNotEmpty(productId), SkuStock::getProductId, productId)
+        return baseMapper.selectList(new LambdaQueryWrapper<SkuStock>()
+                .eq(StringUtils.isNotEmpty(productId), SkuStock::getProductId, productId)
                 .likeRight(StringUtils.isNotEmpty(keyword), SkuStock::getSkuCode, keyword));
     }
 
