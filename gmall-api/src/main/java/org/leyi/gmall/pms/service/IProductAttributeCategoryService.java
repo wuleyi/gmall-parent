@@ -2,7 +2,10 @@ package org.leyi.gmall.pms.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import org.leyi.gmall.base.BasePage;
+import org.leyi.gmall.pms.dto.PmsProductAttributeCategoryDto;
 import org.leyi.gmall.pms.entity.ProductAttributeCategory;
+
+import java.util.List;
 
 /**
  * <p>
@@ -16,4 +19,5 @@ public interface IProductAttributeCategoryService extends IService<ProductAttrib
 
     BasePage pagePlus(Long current, Long size);
 
+    List<PmsProductAttributeCategoryDto> listWithAttr();
 }

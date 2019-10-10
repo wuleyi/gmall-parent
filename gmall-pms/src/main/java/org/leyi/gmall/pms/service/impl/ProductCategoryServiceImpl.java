@@ -2,9 +2,12 @@ package org.leyi.gmall.pms.service.impl;
 
 import com.alibaba.dubbo.config.annotation.Service;
 import com.alibaba.fastjson.JSON;
+import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import lombok.extern.slf4j.Slf4j;
+import org.leyi.gmall.base.BasePage;
 import org.leyi.gmall.constant.RedisCacheConstant;
 import org.leyi.gmall.pms.entity.ProductCategory;
 import org.leyi.gmall.pms.mapper.ProductCategoryMapper;
@@ -46,6 +49,13 @@ public class ProductCategoryServiceImpl extends ServiceImpl<ProductCategoryMappe
         List<ProductCategory> productCategories = renderCategory(categoryDtos.stream().filter(categoryDto -> categoryDto.getLevel() == 0).collect(Collectors.toList()), categoryDtos);
         operations.set(RedisCacheConstant.PRODUCT_CATEGORY_CACHE_KEY, JSON.toJSONString(productCategories), 3, TimeUnit.DAYS);
         return productCategories;
+    }
+
+    @Override
+    public BasePage getByParentId(Long parentId, Long current, Long size) {
+
+        return new BasePage(baseMapper.selectPage(new Page(current, size), new LambdaQueryWrapper<ProductCategory>()
+                .eq(ProductCategory::getParentId, parentId)));
     }
 
     /**

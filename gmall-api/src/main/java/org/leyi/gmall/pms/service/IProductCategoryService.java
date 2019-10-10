@@ -1,6 +1,7 @@
 package org.leyi.gmall.pms.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.leyi.gmall.base.BasePage;
 import org.leyi.gmall.pms.entity.ProductCategory;
 
 import java.util.List;
@@ -16,5 +17,7 @@ import java.util.List;
 public interface IProductCategoryService extends IService<ProductCategory> {
 
     List<ProductCategory> listWithChildren();
+
+    BasePage getByParentId(Long parentId, Long current, Long size);
 
 }
