@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.google.common.collect.Lists;
 import org.leyi.gmall.base.BasePage;
-import org.leyi.gmall.pms.dto.PmsProductAttributeCategoryDto;
+import org.leyi.gmall.pms.dto.PmsProductCategoryWithAttributeDto;
 import org.leyi.gmall.pms.entity.ProductAttributeCategory;
 import org.leyi.gmall.pms.mapper.ProductAttributeCategoryMapper;
 import org.leyi.gmall.pms.mapper.ProductAttributeMapper;
@@ -37,13 +37,13 @@ public class ProductAttributeCategoryServiceImpl extends ServiceImpl<ProductAttr
     }
 
     @Override
-    public List<PmsProductAttributeCategoryDto> listWithAttr() {
+    public List<PmsProductCategoryWithAttributeDto> listWithAttr() {
 
         var productAttributeCategories = this.list();
         var resultList = Lists.newArrayListWithCapacity(productAttributeCategories.size());
         productAttributeCategories.forEach(pac -> {
             var productAttributeCategoryId = pac.getId();
-            resultList.add(new PmsProductAttributeCategoryDto(
+            resultList.add(new PmsProductCategoryWithAttributeDto(
                     productAttributeCategoryId,
                     pac.getName(),
                     productAttributeMapper.selectList(null).stream()
@@ -51,7 +51,7 @@ public class ProductAttributeCategoryServiceImpl extends ServiceImpl<ProductAttr
                             .collect(Collectors.toUnmodifiableList()))
             );
         });
-        return JSON.parseArray(JSON.toJSONString(resultList), PmsProductAttributeCategoryDto.class);
+        return JSON.parseArray(JSON.toJSONString(resultList), PmsProductCategoryWithAttributeDto.class);
     }
 
 }

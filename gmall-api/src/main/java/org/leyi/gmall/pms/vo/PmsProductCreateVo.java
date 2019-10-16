@@ -14,6 +14,8 @@ import java.util.ArrayList;
 @ApiModel("商品添加参数（全）")
 public class PmsProductCreateVo implements Serializable {
 
+    private static final long serialVersionUID=1L;
+
     @ApiModelProperty("商品分类id")
     private Integer productCategoryId;
 

@@ -14,6 +14,8 @@ import java.util.ArrayList;
 @ApiModel("商品添加参数")
 public class PmsProductPlusVo extends Product implements Serializable {
 
+    private static final long serialVersionUID=1L;
+
     @ApiModelProperty("sku库存")
     private ArrayList<SkuStock> skuStockList;
 

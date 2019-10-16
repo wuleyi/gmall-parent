@@ -11,7 +11,9 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class PmsProductAttributeCategoryDto implements Serializable {
+public class PmsProductCategoryWithAttributeDto implements Serializable {
+
+    private static final long serialVersionUID=1L;
 
     private Long id;
     private String name;

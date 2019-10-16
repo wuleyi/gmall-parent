@@ -4,9 +4,8 @@ import com.alibaba.dubbo.config.annotation.Reference;
 import com.baomidou.mybatisplus.extension.api.R;
 import io.swagger.annotations.Api;
 import org.leyi.gmall.pms.service.IProductCategoryService;
+import org.leyi.gmall.pms.vo.PmsProductCategoryCreateVo;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.Map;
 
 @CrossOrigin
 @Api("商品分类管理")
@@ -32,9 +31,16 @@ public class PmsProductCategoryController {
     }
 
     @PostMapping("create")
-    public R createProductCategory(@RequestBody Map<String,Object> params){
+    public R createProductCategory(@RequestBody PmsProductCategoryCreateVo productCategoryCreateVo){
 
-        return R.ok(null).setCode(200);
+        return R.ok(productCategoryService.saveProductCategory(productCategoryCreateVo)).setCode(200);
     }
+
+    @GetMapping("{id}")
+    public R get(@PathVariable Long id){
+
+        return R.ok(productCategoryService.getById(id)).setCode(200);
+    }
+
 
 }

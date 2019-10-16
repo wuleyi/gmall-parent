@@ -10,13 +10,19 @@ import lombok.extern.slf4j.Slf4j;
 import org.leyi.gmall.base.BasePage;
 import org.leyi.gmall.constant.RedisCacheConstant;
 import org.leyi.gmall.pms.entity.ProductCategory;
+import org.leyi.gmall.pms.entity.ProductCategoryAttributeRelation;
 import org.leyi.gmall.pms.mapper.ProductCategoryMapper;
+import org.leyi.gmall.pms.service.IProductCategoryAttributeRelationService;
 import org.leyi.gmall.pms.service.IProductCategoryService;
+import org.leyi.gmall.pms.vo.PmsProductCategoryCreateVo;
+import org.leyi.gmall.util.LeyiUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.redis.core.StringRedisTemplate;
 import org.springframework.data.redis.core.ValueOperations;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.concurrent.TimeUnit;
 import java.util.stream.Collectors;
 
@@ -56,6 +62,34 @@ public class ProductCategoryServiceImpl extends ServiceImpl<ProductCategoryMappe
 
         return new BasePage(baseMapper.selectPage(new Page(current, size), new LambdaQueryWrapper<ProductCategory>()
                 .eq(ProductCategory::getParentId, parentId)));
+    }
+
+    @Autowired
+    private IProductCategoryAttributeRelationService productCategoryAttributeRelationService;
+
+    @Override
+    @Transactional
+    public boolean saveProductCategory(PmsProductCategoryCreateVo productCategoryCreateVo) {
+
+        var productCategory = LeyiUtils.copyProperties(productCategoryCreateVo, new ProductCategory());
+
+        // 新商品分类的 level = 父分类level +1，如果是"无上级分类"，前端传过来的parentId会为-1，直接加1就行
+        final var parentId = productCategoryCreateVo.getParentId();
+        var parentProductCategory = baseMapper.selectOne(new LambdaQueryWrapper<ProductCategory>()
+                .select(ProductCategory::getLevel)
+                .eq(ProductCategory::getId, parentId));
+        productCategory.setLevel((Objects.nonNull(parentProductCategory) ? parentProductCategory.getLevel() : parentId.intValue()) + 1);
+
+        this.save(productCategory);
+        var productCategoryId = productCategory.getId();
+
+        productCategoryAttributeRelationService.saveBatch(productCategoryCreateVo.getProductAttributeIdList().stream()
+                .map(productAttributeId -> new ProductCategoryAttributeRelation(productCategoryId, productAttributeId))
+                .collect(Collectors.toUnmodifiableList()));
+
+        // 添加了新分类，这里采取将redis中缓存的key删除的方式来使数据同步，使得下次从新从数据库中查询
+        redisTemplate.delete(RedisCacheConstant.PRODUCT_CATEGORY_CACHE_KEY);
+        return true;
     }
 
     /**

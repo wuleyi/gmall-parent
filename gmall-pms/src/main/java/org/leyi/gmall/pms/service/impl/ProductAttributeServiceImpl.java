@@ -9,6 +9,8 @@ import org.leyi.gmall.pms.entity.ProductAttribute;
 import org.leyi.gmall.pms.mapper.ProductAttributeMapper;
 import org.leyi.gmall.pms.service.IProductAttributeService;
 
+import java.util.ArrayList;
+
 /**
  * <p>
  * 商品属性参数表 服务实现类
@@ -26,6 +28,13 @@ public class ProductAttributeServiceImpl extends ServiceImpl<ProductAttributeMap
         return new BasePage<ProductAttribute>(baseMapper.selectPage(new Page(current, size), new LambdaQueryWrapper<ProductAttribute>()
                 .eq(ProductAttribute::getProductAttributeCategoryId, productAttributeCategoryId)
                 .eq(ProductAttribute::getType, type)));
+    }
+
+    @Override
+    public ArrayList<ProductAttribute> listByCategoryId(Long productCategoryId) {
+
+        // TODO 待完善
+        return null;
     }
 
 }

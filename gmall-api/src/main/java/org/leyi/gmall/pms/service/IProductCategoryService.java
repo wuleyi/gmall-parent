@@ -3,6 +3,7 @@ package org.leyi.gmall.pms.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import org.leyi.gmall.base.BasePage;
 import org.leyi.gmall.pms.entity.ProductCategory;
+import org.leyi.gmall.pms.vo.PmsProductCategoryCreateVo;
 
 import java.util.List;
 
@@ -20,4 +21,5 @@ public interface IProductCategoryService extends IService<ProductCategory> {
 
     BasePage getByParentId(Long parentId, Long current, Long size);
 
+    boolean saveProductCategory(PmsProductCategoryCreateVo productCategoryCreateVo);
 }

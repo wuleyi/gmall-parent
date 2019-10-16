@@ -68,6 +68,7 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
     @Override
     public boolean updateBatchProductStatus(String ids, Integer publishStatus, String productStatusType) {
 
+        /*
         SFunction<Product, ?> column = Product::getPublishStatus; // 假设默认是修改商品状态
         switch (productStatusType) {
             case ProductStatusConstant.DELETE_STATUS:
@@ -82,7 +83,17 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
             case ProductStatusConstant.VERIFY_STATUS:
                 column = Product::getVerifyStatus;
                 break;
-        }
+        }*/
+
+        // JDK12 Switch expression.
+        SFunction<Product, ?> column = switch (productStatusType) {
+            case ProductStatusConstant.DELETE_STATUS -> Product::getDeleteStatus;
+            case ProductStatusConstant.NEW_STATUS -> Product::getNewStatus;
+            case ProductStatusConstant.RECOMMAND_STATUS -> Product::getRecommandStatus;
+            case ProductStatusConstant.VERIFY_STATUS -> Product::getVerifyStatus;
+            default -> Product::getPublishStatus;
+        };
+
         return this.update(new LambdaUpdateWrapper<Product>()
                 .in(StringUtils.isNotEmpty(ids), Product::getId, Lists.newArrayList(ids.split(",")))
                 .set(column, publishStatus));
@@ -137,7 +148,7 @@ public class ProductServiceImpl extends ServiceImpl<ProductMapper, Product> impl
     }
 
     @Transactional(propagation = Propagation.REQUIRED)
-    public void saveProduct(PmsProductPlusVo productPlusVo){
+    public void saveProduct(PmsProductPlusVo productPlusVo) {
 
         Product product = LeyiUtils.copyProperties(productPlusVo, new Product());
         this.save(product);

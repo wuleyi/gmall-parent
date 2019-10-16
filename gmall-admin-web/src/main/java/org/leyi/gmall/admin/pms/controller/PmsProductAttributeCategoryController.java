@@ -3,7 +3,7 @@ package org.leyi.gmall.admin.pms.controller;
 import com.alibaba.dubbo.config.annotation.Reference;
 import com.baomidou.mybatisplus.extension.api.R;
 import io.swagger.annotations.Api;
-import org.leyi.gmall.pms.dto.PmsProductAttributeCategoryDto;
+import org.leyi.gmall.pms.dto.PmsProductCategoryWithAttributeDto;
 import org.leyi.gmall.pms.service.IProductAttributeCategoryService;
 import org.springframework.web.bind.annotation.*;
 
@@ -28,7 +28,7 @@ public class PmsProductAttributeCategoryController {
     @GetMapping("list/withAttr")
     public R getWithAttr(){
 
-        List<PmsProductAttributeCategoryDto> list = productAttributeCategoryService.listWithAttr();
+        List<PmsProductCategoryWithAttributeDto> list = productAttributeCategoryService.listWithAttr();
         return R.ok(list).setCode(200);
     }
 

@@ -14,6 +14,8 @@ import java.io.Serializable;
 @ApiModel("后台商品查询参数vo")
 public class PmsProductQuery implements Serializable {
 
+    private static final long serialVersionUID=1L;
+
     @ApiModelProperty("上架状态")
     private Integer publishStatus;
 

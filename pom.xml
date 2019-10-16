@@ -13,7 +13,12 @@
         <module>gmall-api</module>
         <module>gmall-pms</module>
         <module>gmall-admin-web</module>
-        <module>gmall-mbg</module>
     </modules>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>12</maven.compiler.source>
+        <maven.compiler.target>12</maven.compiler.target>
+    </properties>
 
 </project>
